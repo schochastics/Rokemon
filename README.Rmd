@@ -1,0 +1,44 @@
+---
+output:
+  md_document:
+    variant: markdown_github
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+```
+# Fonts
+Download the following Fonts: 
+ * Pokemon Title [(Link)](https://www.dafont.com/pokemon.font) 
+ * Gameboy Version [(Link)](https://github.com/Superpencil/pokemon-font/releases/tag/v1.8.1)
+
+In order to use these fonts in R you will need the `extrafont` package.
+```{R eval=FALSE}
+install.packages("extrafont")
+extrafont::font_import() #only run ones
+extrafont::loadfonts()
+```
+#Color Palettes
+R package including color palettes 
+
+```{R eval=FALSE}
+install.packages('palettetown')
+```
+
+# Rokemon
+
+The goal of Rcanine is to ...
+
+## Example
+
+This is a basic example which shows you how to solve a common problem:
+
+```{r example}
+## basic example code
+```
