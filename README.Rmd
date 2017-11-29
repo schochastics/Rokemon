@@ -13,11 +13,12 @@ knitr::opts_chunk$set(
   fig.path = "README-",
   fig.width = 6,
   fig.height = 6,
-  out.width = '80%'
+  out.width = '80%',
+  fig.align = "center" 
 )
 ```
 
-# Rokemon
+![](rokemon.png)
 
 # Install
 ```{r install, eval = FALSE}

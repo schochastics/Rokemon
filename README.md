@@ -1,6 +1,5 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-Rokemon
-=======
+![](rokemon.png)
 
 Install
 =======
@@ -32,7 +31,7 @@ pokemon %>%
   labs(title="Efficiency Table")
 ```
 
-<img src="README-effectiveness-1.png" width="80%" />
+<img src="README-effectiveness-1.png" width="80%" style="display: block; margin: auto;" />
 
 Fonts
 =====
