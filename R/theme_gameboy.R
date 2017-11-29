@@ -2,26 +2,25 @@
 #'
 #' Theme based on the first generation gameboy.
 #'
-#' @param title_style string. Either \code{"8Bit"} for *Bit Font or \code{"poke"} for Pokemon title Font.
 #' @export
 
 theme_gameboy <- function() {
   title_font <- "pokemon-font"
 
-  gb <- ggplot2::theme(panel.grid = element_blank(),
-          # panel.grid.major = element_line(colour="#008B00"),
-          panel.background = element_rect(fill="#79BC00"),
-          panel.border = element_rect(fill=NA,colour="#8F8B8F",size=4),
-          plot.background = element_rect(fill="#C1BDB7"),
-          text = element_text(family = "pokemon-font"),
-          plot.title = element_text(family = title_font,colour="#561E94"),
-          plot.subtitle = element_text(family = title_font,colour="#561E94"),
-          axis.ticks = element_line(colour="#8F8B8F"),
-          legend.background = element_rect(fill="#C1BDB7"),
+  gb <- ggplot2::theme(panel.grid = ggplot2::element_blank(),
+          # panel.grid.major = ggplot2::element_line(colour="#008B00"),
+          panel.background = ggplot2::element_rect(fill="#79BC00"),
+          panel.border = ggplot2::element_rect(fill=NA,colour="#8F8B8F",size=4),
+          plot.background = ggplot2::element_rect(fill="#C1BDB7"),
+          text = ggplot2::element_text(family = "pokemon-font"),
+          plot.title = ggplot2::element_text(family = title_font,colour="#561E94"),
+          plot.subtitle = ggplot2::element_text(family = title_font,colour="#561E94"),
+          axis.ticks = ggplot2::element_line(colour="#8F8B8F"),
+          legend.background = ggplot2::element_rect(fill="#C1BDB7"),
           legend.position = "bottom",
-          legend.text = element_text(colour="#561E94"),
-          legend.key = element_rect(fill="#C1BDB7",colour="black"),
-          plot.caption = element_text(colour = "#A20055"))
+          legend.text = ggplot2::element_text(colour="#561E94"),
+          legend.key = ggplot2::element_rect(fill="#C1BDB7",colour="black"),
+          plot.caption = ggplot2::element_text(colour = "#A20055"))
   return(gb)
 }
 
@@ -33,19 +32,19 @@ theme_gameboy <- function() {
 #' @export
 theme_status <- function(){
     hp <- ggplot2::theme(legend.position="none",
-            axis.line = element_line(size = 1,lineend = "square"),
-            axis.text.y = element_text(family = "pokemon-font",colour = "#ecdb6d"),
-            axis.text.x = element_text(family = "pokemon-font",colour = "#ecdb6d"),
-            plot.title = element_text(family = "pokemon-font",colour = "#ecdb6d"),
-            plot.subtitle = element_text(family = "pokemon-font",colour = "#ecdb6d"),
-            plot.caption = element_text(family = "pokemon-font",colour = "#ecdb6d"),
-            axis.ticks.x = element_line(colour = "#ecdb6d"),
-            axis.ticks.y = element_line(colour = "#ecdb6d"),
-            plot.background = element_rect(fill = "black"),
-            panel.background = element_rect(fill = "white"),
-            panel.grid = element_blank(),
-            strip.background = element_rect(fill="#ecdb6d"),
-            strip.text = element_text(family = "pokemon-font",colour = "black"))
+            axis.line = ggplot2::element_line(size = 1,lineend = "square"),
+            axis.text.y = ggplot2::element_text(family = "pokemon-font",colour = "#ecdb6d"),
+            axis.text.x = ggplot2::element_text(family = "pokemon-font",colour = "#ecdb6d"),
+            plot.title = ggplot2::element_text(family = "pokemon-font",colour = "#ecdb6d"),
+            plot.subtitle = ggplot2::element_text(family = "pokemon-font",colour = "#ecdb6d"),
+            plot.caption = ggplot2::element_text(family = "pokemon-font",colour = "#ecdb6d"),
+            axis.ticks.x = ggplot2::element_line(colour = "#ecdb6d"),
+            axis.ticks.y = ggplot2::element_line(colour = "#ecdb6d"),
+            plot.background = ggplot2::element_rect(fill = "black"),
+            panel.background = ggplot2::element_rect(fill = "white"),
+            panel.grid = ggplot2::element_blank(),
+            strip.background = ggplot2::element_rect(fill="#ecdb6d"),
+            strip.text = ggplot2::element_text(family = "pokemon-font",colour = "black"))
     return(hp)
 }
 
@@ -54,47 +53,52 @@ theme_status <- function(){
 #'
 #' Blasting off
 #'
+#' @param ... theme stuff
+#'
 #' @export
-theme_rocket <- function(){
-  rocket <- ggplot2::theme(panel.background = element_rect(fill="#FFFFFF",colour=NA),
-        plot.background =  element_rect(fill="#0F0F0F",colour=NA),
-        panel.grid.minor = element_blank(),
-        panel.grid.major = element_line(colour="#DEBD39",linetype = 8),
-        axis.title.x = element_text(colour = "#EE30A7"),
-        axis.text.x = element_text(colour = "#EE30A7"),
-        axis.line.x = element_line(colour = "#EE30A7",size=1.5,lineend = "square"),
-        axis.ticks.x = element_line(colour = "#EE30A7"),
-        axis.title.y = element_text(colour = "#8968CD"),
-        axis.text.y = element_text(colour = "#8968CD"),
-        axis.line.y = element_line(colour = "#8968CD",size=1.5,lineend = "square"),
-        axis.ticks.y = element_line(colour = "#8968CD"),
-        plot.title = element_text(colour="#DEBD39"),
-        plot.subtitle = element_text(colour="#DEBD39"),
-        plot.caption = element_text(colour="#DEBD39"),
-        strip.background = element_rect(fill="#0F0F0F",colour=NA),
-        strip.text = element_text(colour="#DEBD39"),
-        legend.background = element_rect(fill="#0F0F0F"),
-        legend.text = element_text(colour="#DEBD39"),
-        legend.key = element_rect(fill="#0F0F0F",colour="#DEBD39"))
+theme_rocket <- function(...){
+  rocket <- ggplot2::theme(panel.background = ggplot2::element_rect(fill="#FFFFFF",colour=NA),
+        plot.background =  ggplot2::element_rect(fill="#0F0F0F",colour=NA),
+        panel.grid.minor = ggplot2::element_blank(),
+        panel.grid.major = ggplot2::element_line(colour="#DEBD39",linetype = 8),
+        axis.title.x = ggplot2::element_text(colour = "#EE30A7"),
+        axis.text.x = ggplot2::element_text(colour = "#EE30A7"),
+        axis.line.x = ggplot2::element_line(colour = "#EE30A7",size=1.5,lineend = "square"),
+        axis.ticks.x = ggplot2::element_line(colour = "#EE30A7"),
+        axis.title.y = ggplot2::element_text(colour = "#8968CD"),
+        axis.text.y = ggplot2::element_text(colour = "#8968CD"),
+        axis.line.y = ggplot2::element_line(colour = "#8968CD",size=1.5,lineend = "square"),
+        axis.ticks.y = ggplot2::element_line(colour = "#8968CD"),
+        plot.title = ggplot2::element_text(colour="#DEBD39"),
+        plot.subtitle = ggplot2::element_text(colour="#DEBD39"),
+        plot.caption = ggplot2::element_text(colour="#DEBD39"),
+        strip.background = ggplot2::element_rect(fill="#0F0F0F",colour=NA),
+        strip.text = ggplot2::element_text(colour="#DEBD39"),
+        legend.background = ggplot2::element_rect(fill="#0F0F0F"),
+        legend.text = ggplot2::element_text(colour="#DEBD39"),
+        legend.key = ggplot2::element_rect(fill="#0F0F0F",colour="#DEBD39"),...)
 
   return(rocket)
 }
 #-------------------------------------------------------------------------------
 #' Pogo Team Logo as background
 #'
+#'enhance
 #'
+#'@param team string. either 'mystic', 'valor' or 'instinct'
+#'@param opacity opacity of team logo.
 #'
 #' @export
 annotate_pogo <- function(team="mystic",opacity=0.5){
   if(!team%in%c("mystic","valor","instinct")){
-    error("team must be one of 'mystic', 'valor','instinct'")
+    stop("team must be one of 'mystic', 'valor','instinct'")
   }
   bg_dir <- system.file("backgrounds",package="Rokemon")
   img <- png::readPNG(paste0(bg_dir,"/team-",team,".png"))
   img[,,4] <- opacity*img[,,4]
   g <- grid::rasterGrob(img, interpolate=TRUE,gp = grid::gpar(alpha=0.2))
 
-  pogo <- annotation_custom(g, xmin=-Inf, xmax=Inf, ymin=-Inf, ymax=Inf)
+  pogo <- ggplot2::annotation_custom(g, xmin=-Inf, xmax=Inf, ymin=-Inf, ymax=Inf)
 
   return(pogo)
 }
@@ -105,14 +109,14 @@ annotate_pogo <- function(team="mystic",opacity=0.5){
 #'
 #' @export
 theme_mystic <- function(){
-  mystic <- theme(panel.background = element_rect(fill="white"),
-                 plot.background = element_rect(fill="#4B38F7"),
-                 panel.grid = element_blank(),
-                 strip.background = element_rect(fill="#483D8B"),
-                 strip.text = element_text(colour="white"),
-                 axis.text = element_text(colour="white"),
-                 axis.ticks = element_line(colour="white"),
-                 axis.title = element_text(colour="white")
+  mystic <- ggplot2::theme(panel.background = ggplot2::element_rect(fill="white"),
+                           plot.background = ggplot2::element_rect(fill="#4B38F7"),
+                           panel.grid = ggplot2::element_blank(),
+                           strip.background = ggplot2::element_rect(fill="#483D8B"),
+                           strip.text = ggplot2::element_text(colour="white"),
+                           axis.text = ggplot2::element_text(colour="white"),
+                           axis.ticks = ggplot2::element_line(colour="white"),
+                           axis.title = ggplot2::element_text(colour="white")
   )
   return(mystic)
 }
@@ -124,10 +128,10 @@ theme_mystic <- function(){
 #'
 #' @export
 theme_valor <- function(){
-  valor <- theme(panel.background = element_rect(fill="white"),
-                    plot.background = element_rect(fill="#FC0000"),
-                    panel.grid = element_blank(),
-                    strip.background = element_rect(fill="#CD0000")
+  valor <- ggplot2::theme(panel.background = ggplot2::element_rect(fill="white"),
+                          plot.background = ggplot2::element_rect(fill="#FC0000"),
+                          panel.grid = ggplot2::element_blank(),
+                          strip.background = ggplot2::element_rect(fill="#CD0000")
   )
   return(valor)
 }
@@ -139,10 +143,10 @@ theme_valor <- function(){
 #'
 #' @export
 theme_instinct <- function(){
-  instinct <- theme(panel.background = element_rect(fill="white"),
-                    plot.background = element_rect(fill="#F7E300"),
-                    panel.grid = element_blank(),
-                    strip.background = element_rect(fill="#FFD700")
+  instinct <- ggplot2::theme(panel.background = ggplot2::element_rect(fill="white"),
+                             plot.background = ggplot2::element_rect(fill="#F7E300"),
+                             panel.grid = ggplot2::element_blank(),
+                             strip.background = ggplot2::element_rect(fill="#FFD700")
   )
   return(instinct)
 }

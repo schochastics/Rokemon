@@ -4,10 +4,7 @@
 \alias{theme_gameboy}
 \title{Gamyboy inspired ggplot theme}
 \usage{
-theme_gameboy(title_style = "8Bit")
-}
-\arguments{
-\item{title_style}{string. Either \code{"8Bit"} for *Bit Font or \code{"poke"} for Pokemon title Font.}
+theme_gameboy()
 }
 \description{
 Theme based on the first generation gameboy.

@@ -31,17 +31,36 @@
 #   mutate(defense=defense/max(defense)) %>%
 #   ggplot(aes(x=reorder(name,defense)))+geom_healthbar(aes(y=defense))+coord_flip()
 
-gghealth <- function(data,names,values,init.size=3,cuts = c(0.5,0.25)){
-  data[[values]] <- data[[values]]/max(data[[values]])
+#' healthbar plot
+#'
+#'plot stuff and things
+#'
+#'@param data data.frame
+#'@param names column name of names
+#'@param values column name of values to plot
+#'@param sort.names order or not
+#'@param init.size size of the healthbar
+#'@param cuts where to change the colors
+#'@export
+gghealth <- function(data,names,values,sort.names=TRUE,
+                     init.size=3,cuts = c(0.5,0.25)){
+  fracs <- (data[[values]]-min(data[[values]]))/(max(data[[values]])-data[[values]])
+  max_val <- max(data[[values]])
   init.size <- max(init.size,3)
-  hp_col <- factor(ifelse(data[[values]]>cuts[1],1,
-                          ifelse(data[[values]]>cuts[2],2,3)))
+  if(sort.names){
+    ordered <- order(data[[values]])
+  } else{
+    ordered <- 1:nrow(data)
+  }
+  data[[names]] <- factor(data[[names]],levels = data[[names]][ordered])
+  hp_col <- factor(ifelse(fracs>cuts[1],1,
+                          ifelse(fracs>cuts[2],2,3)))
   data[["hp_col"]] <- hp_col
 
   p <- ggplot2::ggplot(data,ggplot2::aes_string(x = names))+
-    ggplot2::geom_segment(ggplot2::aes_string(xend = names),yend = 1,y = 0,
+    ggplot2::geom_segment(ggplot2::aes_string(xend = names),yend = max_val,y = 0,
                      size = init.size,lineend = "round")+
-    ggplot2::geom_segment(ggplot2::aes_string(xend = names),yend = 1,y = 0,
+    ggplot2::geom_segment(ggplot2::aes_string(xend = names),yend = max_val,y = 0,
                      size = init.size-1,lineend = "round",colour = "white")+
     ggplot2::geom_segment(ggplot2::aes_string(xend = names,yend = values, colour = "hp_col"),
                      y = 0,size = init.size-1,lineend = "butt")+
