@@ -10,7 +10,7 @@ output:
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
-  fig.path = "README-",
+  fig.path = "figures/",
   fig.width = 6,
   fig.height = 6,
   out.width = '80%',
@@ -20,7 +20,6 @@ knitr::opts_chunk$set(
 
 ![](rokemon.png) 
 
-[^1]
 
 # Install
 ```{r install, eval = FALSE}
@@ -69,4 +68,6 @@ R package including color palettes
 install.packages('palettetown')
 ```
 
-[^1]: Logo generated with [fontmeme](https://fontmeme.com/pokemon-font/)
+# Addendum
+
+Logo generated with [fontmeme](https://fontmeme.com/pokemon-font/)

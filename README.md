@@ -1,8 +1,6 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 ![](rokemon.png)
 
-[1]
-
 Install
 =======
 
@@ -33,7 +31,7 @@ pokemon %>%
   labs(title="Efficiency Table")
 ```
 
-<img src="README-effectiveness-1.png" width="80%" style="display: block; margin: auto;" />
+<img src="figures/effectiveness-1.png" width="80%" style="display: block; margin: auto;" />
 
 Fonts
 =====
@@ -57,4 +55,7 @@ R package including color palettes
 install.packages('palettetown')
 ```
 
-[1] Logo generated with [fontmeme](https://fontmeme.com/pokemon-font/)
+Addendum
+========
+
+Logo generated with [fontmeme](https://fontmeme.com/pokemon-font/)
