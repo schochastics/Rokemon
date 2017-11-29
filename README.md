@@ -1,40 +1,24 @@
----
-output:
-  md_document:
-    variant: markdown_github
----
-
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+Rokemon
+=======
 
-```{r, echo = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>",
-  fig.path = "README-",
-  fig.width = 6,
-  fig.height = 6,
-  out.width = '80%'
-)
-```
+Install
+=======
 
-# Rokemon
-
-# Install
-```{r install, eval = FALSE}
+``` r
 #install.packages("devtools")
 devtools::install_github("schochastics/Rokemon")
 ```
 
-```{r load-libs,message=FALSE,warning=FALSE}
+``` r
 library(Rokemon)
 library(tidyverse)
 ```
 
+Example
+=======
 
-# Example
-
-
-```{r effectiveness}
+``` r
 pokemon %>%
   distinct(type1,.keep_all=TRUE) %>%
   select(attacker = type1,against_bug:against_water) %>%
@@ -48,20 +32,26 @@ pokemon %>%
   labs(title="Efficiency Table")
 ```
 
-# Fonts
-Download the following Fonts: 
- * Pokemon Title [(Link)](https://www.dafont.com/pokemon.font) 
- * Gameboy Version [(Link)](https://github.com/Superpencil/pokemon-font/releases/tag/v1.8.1)
+<img src="README-effectiveness-1.png" width="80%" />
+
+Fonts
+=====
+
+Download the following Fonts: \* Pokemon Title [(Link)](https://www.dafont.com/pokemon.font) \* Gameboy Version [(Link)](https://github.com/Superpencil/pokemon-font/releases/tag/v1.8.1)
 
 In order to use these fonts in R you will need the `extrafont` package.
-```{R install-fonts, eval=FALSE}
+
+``` r
 install.packages("extrafont")
 extrafont::font_import() #only run ones
 extrafont::loadfonts()
 ```
-#Color Palettes
-R package including color palettes 
 
-```{R palettes, eval=FALSE}
+Color Palettes
+==============
+
+R package including color palettes
+
+``` r
 install.packages('palettetown')
 ```
