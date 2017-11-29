@@ -1,0 +1,27 @@
+.onAttach <- function(libname, pkgname) {
+
+  if (interactive()) {
+    packageStartupMessage(paste0("Rokemon",
+                                 "Check out https://github.com/schochastics/Rokemon"))
+  }
+
+
+  if (.Platform$OS.type == "windows")  { # nocov start
+    if (interactive()) packageStartupMessage("Registering Windows fonts with R")
+    extrafont::loadfonts("win", quiet = TRUE)
+  }
+
+  # if (getOption("poke.loadfonts", default = FALSE)) {
+  #   if (interactive()) packageStartupMessage("Registering PDF & PostScript fonts with R")
+  #   extrafont::loadfonts("pdf", quiet = TRUE)
+  #   extrafont::loadfonts("postscript", quiet = TRUE)
+  # }
+
+  fnt <- extrafont::fonttable()
+  if (!all(c("Pokemon Hollow","Pokemon Solid","pokemon-font")%in% fnt$FamilyName)) {
+    packageStartupMessage("NOTE: Pokemon fonts are required to use this package.")
+    packageStartupMessage("      Please use Rokemon::import_pokefont() to install them")
+  } # nocov end
+
+}
+
