@@ -1,6 +1,8 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 ![](rokemon.png)
 
+[1]
+
 Install
 =======
 
@@ -54,3 +56,5 @@ R package including color palettes
 ``` r
 install.packages('palettetown')
 ```
+
+[1] Logo generated with [fontmeme](https://fontmeme.com/pokemon-font/)

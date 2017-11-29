@@ -18,7 +18,9 @@ knitr::opts_chunk$set(
 )
 ```
 
-![](rokemon.png)
+![](rokemon.png) 
+
+[^1]
 
 # Install
 ```{r install, eval = FALSE}
@@ -66,3 +68,5 @@ R package including color palettes
 ```{R palettes, eval=FALSE}
 install.packages('palettetown')
 ```
+
+[^1]: Logo generated with [fontmeme](https://fontmeme.com/pokemon-font/)
