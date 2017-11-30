@@ -99,7 +99,7 @@ Create pie charts of the color distribution of Pokemon sprites. Download all spr
 
 ``` r
 #basic usage
-poke_pie(path_to_sprites,poke)
+poke_pie(path_to_sprites,pokemon_name)
 ```
 
 ![](figures/poke-pies.png)
@@ -130,7 +130,7 @@ pokemon %>%
 Fonts
 =====
 
-Download the Font [here](https://github.com/Superpencil/pokemon-font/releases/tag/v1.8.1) and install it.
+The package uses an old school gameboy font for some of its themes, which can be download [here](https://github.com/Superpencil/pokemon-font/releases/tag/v1.8.1).
 
 In order to use the font in R you need the `extrafont` package.
 
@@ -149,7 +149,7 @@ import_pokefont()
 Color Palettes
 ==============
 
-The package also includes color palettes, which were automatically generated from all 801 pokemon sprites. I so far did not check all palettes, so there may well be some weird ones. A better alternative would be to use the dedicated package `palettetown`. See the github [repo](https://github.comt/imcdlucas/palettetown) for help.
+The package also includes color palettes, which were automatically generated from all 801 pokemon sprites. So far, I did not check all palettes, so there may well be some weird ones. A better alternative would be to use the dedicated package `palettetown`. See the github [repo](https://github.comt/imcdlucas/palettetown) for help.
 
 ``` r
 install.packages('palettetown')
