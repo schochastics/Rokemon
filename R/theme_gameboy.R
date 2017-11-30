@@ -35,6 +35,7 @@ theme_status <- function(){
             axis.line = ggplot2::element_line(size = 1,lineend = "square"),
             axis.text.y = ggplot2::element_text(family = "pokemon-font",colour = "#ecdb6d"),
             axis.text.x = ggplot2::element_text(family = "pokemon-font",colour = "#ecdb6d"),
+            axis.title = ggplot2::element_text(family = "pokemon-font",colour = "#ecdb6d"),
             plot.title = ggplot2::element_text(family = "pokemon-font",colour = "#ecdb6d"),
             plot.subtitle = ggplot2::element_text(family = "pokemon-font",colour = "#ecdb6d"),
             plot.caption = ggplot2::element_text(family = "pokemon-font",colour = "#ecdb6d"),
@@ -76,6 +77,7 @@ theme_rocket <- function(...){
         strip.text = ggplot2::element_text(colour="#DEBD39"),
         legend.background = ggplot2::element_rect(fill="#0F0F0F"),
         legend.text = ggplot2::element_text(colour="#DEBD39"),
+        legend.title = ggplot2::element_text(colour="#DEBD39",face = "bold"),
         legend.key = ggplot2::element_rect(fill="#0F0F0F",colour="#DEBD39"),...)
 
   return(rocket)
@@ -96,7 +98,7 @@ annotate_pogo <- function(team="mystic",opacity=0.5){
   bg_dir <- system.file("backgrounds",package="Rokemon")
   img <- png::readPNG(paste0(bg_dir,"/team-",team,".png"))
   img[,,4] <- opacity*img[,,4]
-  g <- grid::rasterGrob(img, interpolate=TRUE,gp = grid::gpar(alpha=0.2))
+  g <- grid::rasterGrob(img, interpolate=TRUE)
 
   pogo <- ggplot2::annotation_custom(g, xmin=-Inf, xmax=Inf, ymin=-Inf, ymax=Inf)
 
@@ -112,6 +114,9 @@ theme_mystic <- function(){
   mystic <- ggplot2::theme(panel.background = ggplot2::element_rect(fill="white"),
                            plot.background = ggplot2::element_rect(fill="#4B38F7"),
                            panel.grid = ggplot2::element_blank(),
+                           plot.title = ggplot2::element_text(colour="white"),
+                           plot.subtitle = ggplot2::element_text(colour="white"),
+                           plot.caption = ggplot2::element_text(colour="white"),
                            strip.background = ggplot2::element_rect(fill="#483D8B"),
                            strip.text = ggplot2::element_text(colour="white"),
                            axis.text = ggplot2::element_text(colour="white"),

@@ -12,8 +12,8 @@ knitr::opts_chunk$set(
   comment = "#>",
   fig.path = "figures/",
   fig.width = 6,
-  fig.height = 6,
-  out.width = '80%',
+  fig.height = 4,
+  out.width = '100%',
   fig.align = "center" 
 )
 ```
@@ -32,11 +32,44 @@ library(Rokemon)
 library(tidyverse)
 ```
 
+# Themes
 
-# Example
+Theme Rocket
+
+```{r theme-rocket}
+ggplot(pokemon,aes(attack,defense))+
+  geom_point(col = "grey")+
+  theme_rocket()+
+  labs(x = "Jessy",y = "James",
+       title = "Theme Rocket",
+       subtitle = "blast off at the speed of light!",
+       caption = "meowth that's right")
 
 
-```{r effectiveness}
+```
+
+Gamyboy theme
+
+```{r theme-gameboy}
+ggplot(pokemon,aes(attack,defense))+
+  geom_point(shape = 15,col = c("#006400"),size=2)+
+  theme_gameboy()+
+  labs(title = "Classic Gameboy Theme")
+```
+
+gghealth using Status theme
+```{r gghealth}
+pokemon[1:10,] %>% 
+  gghealth("name","base_total",init.size = 5)+
+  labs(x="",y="Stats Total")
+
+```
+
+
+# Examples
+
+Using `theme_rocket()` to create an efficiency table
+```{r effectiveness,fig.width=10}
 pokemon %>%
   distinct(type1,.keep_all=TRUE) %>%
   select(attacker = type1,against_bug:against_water) %>%
@@ -50,8 +83,34 @@ pokemon %>%
   labs(title="Efficiency Table")
 ```
 
+Annotate your plots with your favorite Pokémon Go team.
+
+```{r pogo-teams,fig.height=4,fig.width=10}
+
+p1 <- pokemon %>%
+  dplyr::filter(type1=="water") %>%
+  ggplot(aes(defense,attack))+geom_point()+annotate_pogo(team = "mystic")+theme_mystic()+
+  labs(title="Team Mystic",subtitle="Water Pokemon")
+
+p2 <- pokemon %>%
+  dplyr::filter(type1=="fire") %>%
+  ggplot(aes(defense,attack))+geom_point()+annotate_pogo(team = "valor")+theme_valor()+
+  labs(title="Team Valor",subtitle="Fire Pokemon")
+
+p3 <- pokemon %>%
+  dplyr::filter(type1=="electric") %>%
+  ggplot(aes(defense,attack))+geom_point()+annotate_pogo(team = "instinct")+theme_instinct()+
+  labs(title="Team Instinct",subtitle="Electric Pokemon")
+
+gridExtra::grid.arrange(grobs=list(p1,p2,p3),ncol=3)
+
+```
+
+
 # Fonts
-Download the following Fonts: 
+
+Either Download the following Fonts: 
+
  * Pokemon Title [(Link)](https://www.dafont.com/pokemon.font) 
  * Gameboy Version [(Link)](https://github.com/Superpencil/pokemon-font/releases/tag/v1.8.1)
 
@@ -61,7 +120,15 @@ install.packages("extrafont")
 extrafont::font_import() #only run ones
 extrafont::loadfonts()
 ```
+
+Alternatively, you can use the function `import_pokefont()`
+```{r import-fonts,eval=FALSE}
+import_pokefont()
+```
+
+
 #Color Palettes
+
 R package including color palettes 
 
 ```{R palettes, eval=FALSE}
@@ -70,4 +137,8 @@ install.packages('palettetown')
 
 # Addendum
 
-Logo generated with [fontmeme](https://fontmeme.com/pokemon-font/)
+* Logo generated with [fontmeme](https://fontmeme.com/pokemon-font/)
+* Pogo Logos downloaded [here](https://dribbble.com/shots/2831980-Pok-mon-GO-Team-Logos-Vector-Download)
+* Pokémon data download from [Kaggle](https://www.kaggle.com/rounakbanik/pokemon), originally
+scraped from [serebii.net](http://serebii.net/)
+* [Sprites](https://github.com/PokeAPI/sprites)
