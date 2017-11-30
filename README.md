@@ -44,20 +44,22 @@ Gamyboy theme
 If you want to get nostalgic.
 
 ``` r
-p1 <- ggplot(pokemon,aes(attack,defense))+
-        geom_point(shape = 15,col = "#006400",size=2)+
-        theme_gameboy()+
-        labs(title = "Classic Gameboy Theme")
-
-p2 <- ggplot(pokemon,aes(attack,defense))+
-        geom_point(shape = 15,col = "#27408B",size=2)+
-        theme_gba()+
-        labs(title = "Gameboy Advanced Theme")
-
-gridExtra::grid.arrange(grobs=list(p1,p2),ncol=2)
+ggplot(pokemon,aes(attack,defense))+
+  geom_point(shape = 15,col = "#006400",size=2)+
+  theme_gameboy()+
+  labs(title = "Classic Gameboy Theme")
 ```
 
 <img src="figures/theme-gameboy-1.png" width="80%" style="display: block; margin: auto;" />
+
+``` r
+ggplot(pokemon,aes(attack,defense))+
+  geom_point(shape = 15,col = "#27408B",size=2)+
+  theme_gba()+
+  labs(title = "Gameboy Advanced Theme")
+```
+
+<img src="figures/theme-gba-1.png" width="80%" style="display: block; margin: auto;" />
 
 Status theme and HP bar chart
 -----------------------------
