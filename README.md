@@ -102,12 +102,9 @@ gridExtra::grid.arrange(grobs=list(p1,p2,p3),ncol=3)
 Fonts
 =====
 
-Either Download the following Fonts:
+Download the Font [here](https://github.com/Superpencil/pokemon-font/releases/tag/v1.8.1)
 
--   Pokemon Title [(Link)](https://www.dafont.com/pokemon.font)
--   Gameboy Version [(Link)](https://github.com/Superpencil/pokemon-font/releases/tag/v1.8.1)
-
-In order to use these fonts in R you will need the `extrafont` package.
+In order to use this font in R you need the `extrafont` package.
 
 ``` r
 install.packages("extrafont")
