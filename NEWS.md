@@ -1,6 +1,7 @@
-# Rcanine 0.0.0.9000
+# Rokemon 0.0.1
 
-* Added a `NEWS.md` file to track changes to the package.
+* several themes for ggplot added.
+* pokemon data and font included in package.
 
 
 

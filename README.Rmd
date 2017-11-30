@@ -123,16 +123,17 @@ pokemon %>%
 
 # Fonts
 
-Download the Font [here](https://github.com/Superpencil/pokemon-font/releases/tag/v1.8.1) 
+Download the Font [here](https://github.com/Superpencil/pokemon-font/releases/tag/v1.8.1)
+and install it.
 
-In order to use this font in R you need the `extrafont` package.
+In order to use the font in R you need the `extrafont` package.
 ```{R install-fonts, eval=FALSE}
 install.packages("extrafont")
 extrafont::font_import() #only run ones
 extrafont::loadfonts()
 ```
 
-Alternatively, you can use the function `import_pokefont()`
+Alternatively, you can use the function `import_pokefont()`.
 ```{r import-fonts,eval=FALSE}
 import_pokefont()
 ```
@@ -140,8 +141,10 @@ import_pokefont()
 
 #Color Palettes
 
-R package including color palettes 
-
+The package also includes color palettes, which were automatically generated from
+all 801 pokemon sprites. I so far did not check all palettes, so there may well be
+some weird ones. A better alternative would be to use the dedicated package `palettetown`.
+See the github [repo](https://github.comt/imcdlucas/palettetown) for help. 
 ```{R palettes, eval=FALSE}
 install.packages('palettetown')
 ```
@@ -152,4 +155,4 @@ install.packages('palettetown')
 * Pogo Logos downloaded [here](https://dribbble.com/shots/2831980-Pok-mon-GO-Team-Logos-Vector-Download)
 * Pokémon data download from [Kaggle](https://www.kaggle.com/rounakbanik/pokemon), originally
 scraped from [serebii.net](http://serebii.net/)
-* [Sprites](https://github.com/PokeAPI/sprites)
+* Sprites used for color palettes downloaded [here](https://github.com/PokeAPI/sprites)
