@@ -20,7 +20,8 @@ knitr::opts_chunk$set(
 
 ![](rokemon.png) 
 
-An R package 
+An R package to create Pokemon style ggplots. It also includes a dataset of 801 Pokemon
+with 41 features.
 
 # Install
 ```{r install, eval = FALSE}
@@ -31,6 +32,8 @@ devtools::install_github("schochastics/Rokemon")
 ```{r load-libs,message=FALSE,warning=FALSE}
 library(Rokemon)
 library(tidyverse)
+
+data(pokemon)
 ```
 
 # Themes
@@ -151,7 +154,7 @@ can be download [here](https://github.com/Superpencil/pokemon-font/releases/tag/
 
 In order to use the font in R you need the `extrafont` package.
 ```{R install-fonts, eval=FALSE}
-install.packages("extrafont")
+#install.packages("extrafont")
 extrafont::font_import() #only run ones
 extrafont::loadfonts()
 ```

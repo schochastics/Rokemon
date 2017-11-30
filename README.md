@@ -1,7 +1,7 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 ![](rokemon.png)
 
-An R package
+An R package to create Pokemon style ggplots. It also includes a dataset of 801 Pokemon with 41 features.
 
 Install
 =======
@@ -14,6 +14,8 @@ devtools::install_github("schochastics/Rokemon")
 ``` r
 library(Rokemon)
 library(tidyverse)
+
+data(pokemon)
 ```
 
 Themes
@@ -144,7 +146,7 @@ The package uses an old school gameboy font for some of its themes, which can be
 In order to use the font in R you need the `extrafont` package.
 
 ``` r
-install.packages("extrafont")
+#install.packages("extrafont")
 extrafont::font_import() #only run ones
 extrafont::loadfonts()
 ```
