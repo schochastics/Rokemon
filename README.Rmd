@@ -119,7 +119,7 @@ code, which was posted on [reddit](https://www.reddit.com/r/pokemon/comments/2ey
 # Examples
 
 Using `theme_rocket()` to create an effectiveness table of Pokemon types.
-```{r effectiveness,fig.width=10,fig.height=8}
+```{r effectiveness,fig.width=8,fig.height=6}
 pokemon %>%
   distinct(type1,.keep_all=TRUE) %>%
   select(defender = type1,against_bug:against_water) %>%
