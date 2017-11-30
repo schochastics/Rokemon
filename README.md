@@ -1,7 +1,7 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 ![](rokemon.png)
 
-An R package to create Pokemon style ggplots. It also includes a dataset of 801 Pokemon with 41 features.
+An R package to create Pokemon inspired ggplots. It also comes with dataset of 801 Pokemon with 41 different features (Gotta analyze'em all!).
 
 Install
 =======
