@@ -43,19 +43,28 @@
 #'@param cuts where to change the colors
 #'@export
 gghealth <- function(data,names,values,sort.names=TRUE,
-                     init.size=3,cuts = c(0.5,0.25)){
-  fracs <- (data[[values]]-min(data[[values]]))/(max(data[[values]])-data[[values]])
+                     init.size=3,cuts = c(0.8,0.4,0.2)){
+  fracs <- (data[[values]]-min(data[[values]]))/(max(data[[values]])-min(data[[values]]))
   max_val <- max(data[[values]])
+  print(fracs)
   init.size <- max(init.size,3)
+
   if(sort.names){
     ordered <- order(data[[values]])
   } else{
     ordered <- 1:nrow(data)
   }
+
   data[[names]] <- factor(data[[names]],levels = data[[names]][ordered])
-  hp_col <- factor(ifelse(fracs>cuts[1],1,
-                          ifelse(fracs>cuts[2],2,3)))
-  data[["hp_col"]] <- hp_col
+  hp_col <- 0
+  hp_col[fracs<cuts[3]] <- 4
+  hp_col[fracs>=cuts[3]] <- 3
+  hp_col[fracs>=cuts[2]] <- 2
+  hp_col[fracs>=cuts[1]] <- 1
+
+
+  print(hp_col)
+  data[["hp_col"]] <- factor(hp_col,levels=1:4)
 
   p <- ggplot2::ggplot(data,ggplot2::aes_string(x = names))+
     ggplot2::geom_segment(ggplot2::aes_string(xend = names),yend = max_val,y = 0,
@@ -64,7 +73,7 @@ gghealth <- function(data,names,values,sort.names=TRUE,
                      size = init.size-1,lineend = "round",colour = "white")+
     ggplot2::geom_segment(ggplot2::aes_string(xend = names,yend = values, colour = "hp_col"),
                      y = 0,size = init.size-1,lineend = "butt")+
-    ggplot2::scale_colour_manual(values = c("#609869","#FB9400","#FF4400"))+
+    ggplot2::scale_colour_manual(values = c(`1`="#66CD00",`2`="#609869",`3`="#FB9400",`4`="#FF4400"))+
     ggplot2::coord_flip()+
         theme_status()
   p

@@ -29,7 +29,7 @@ ggplot(pokemon,aes(attack,defense))+
        caption = "meowth that's right")
 ```
 
-<img src="figures/theme-rocket-1.png" width="100%" style="display: block; margin: auto;" />
+<img src="figures/theme-rocket-1.png" width="80%" style="display: block; margin: auto;" />
 
 Gamyboy theme
 
@@ -40,7 +40,7 @@ ggplot(pokemon,aes(attack,defense))+
   labs(title = "Classic Gameboy Theme")
 ```
 
-<img src="figures/theme-gameboy-1.png" width="100%" style="display: block; margin: auto;" />
+<img src="figures/theme-gameboy-1.png" width="80%" style="display: block; margin: auto;" />
 
 gghealth using Status theme
 
@@ -48,9 +48,11 @@ gghealth using Status theme
 pokemon[1:10,] %>% 
   gghealth("name","base_total",init.size = 5)+
   labs(x="",y="Stats Total")
+#>  [1] 0.2802 0.4784 0.9795 0.2597 0.4784 1.0000 0.2711 0.4784 0.9909 0.0000
+#>  [1] 3 2 1 3 2 1 3 2 1 4
 ```
 
-<img src="figures/gghealth-1.png" width="100%" style="display: block; margin: auto;" />
+<img src="figures/gghealth-1.png" width="80%" style="display: block; margin: auto;" />
 
 Examples
 ========
@@ -71,7 +73,7 @@ pokemon %>%
   labs(title="Efficiency Table")
 ```
 
-<img src="figures/effectiveness-1.png" width="100%" style="display: block; margin: auto;" />
+<img src="figures/effectiveness-1.png" width="80%" style="display: block; margin: auto;" />
 
 Annotate your plots with your favorite Pokémon Go team.
 
@@ -95,7 +97,7 @@ p3 <- pokemon %>%
 gridExtra::grid.arrange(grobs=list(p1,p2,p3),ncol=3)
 ```
 
-<img src="figures/pogo-teams-1.png" width="100%" style="display: block; margin: auto;" />
+<img src="figures/pogo-teams-1.png" width="80%" style="display: block; margin: auto;" />
 
 Fonts
 =====
@@ -134,3 +136,4 @@ Addendum
 -   Logo generated with [fontmeme](https://fontmeme.com/pokemon-font/)
 -   Pogo Logos downloaded [here](https://dribbble.com/shots/2831980-Pok-mon-GO-Team-Logos-Vector-Download)
 -   Pokémon data download from [Kaggle](https://www.kaggle.com/rounakbanik/pokemon), originally scraped from [serebii.net](http://serebii.net/)
+-   [Sprites](https://github.com/PokeAPI/sprites)
