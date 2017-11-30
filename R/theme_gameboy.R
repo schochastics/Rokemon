@@ -116,10 +116,13 @@ theme_rocket <- function(...){
 #'@param team string. either 'mystic', 'valor' or 'instinct'
 #'@param opacity opacity of team logo.
 #'
+#'@references The logos were not designed by me. All credit goes to
+#'\href{https://dribbble.com/shots/2831980-Pok-mon-GO-Team-Logos-Vector-Download}{this guy}.
+#'
 #' @export
 #' @examples
 #' \dontrun{
-#' library(tiduverse)
+#' library(tidyverse)
 #'
 #' pokemon %>%
 #'  dplyr::filter(type1=="water") %>%

@@ -16,7 +16,7 @@ Enhance your plots with a background picture of your favorite Pokemon Go team.
 }
 \examples{
 \dontrun{
-library(tiduverse)
+library(tidyverse)
 
 pokemon \%>\%
  dplyr::filter(type1=="water") \%>\%
@@ -26,4 +26,8 @@ pokemon \%>\%
  theme_mystic()+
  labs(title="Team Mystic",subtitle="Water Pokemon")
 }
+}
+\references{
+The logos were not designed by me. All credit goes to
+\href{https://dribbble.com/shots/2831980-Pok-mon-GO-Team-Logos-Vector-Download}{this guy}.
 }
