@@ -7,5 +7,5 @@
 theme_mystic()
 }
 \description{
-Blasting off
+ggplot theme that simply adds a blue background to the plot.
 }

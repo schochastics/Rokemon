@@ -2,24 +2,34 @@
 % Please edit documentation in R/healthbar.R
 \name{gghealth}
 \alias{gghealth}
-\title{healthbar plot}
+\title{HP bar chart}
 \usage{
 gghealth(data, names, values, sort.names = TRUE, init.size = 3,
   cuts = c(0.8, 0.4, 0.2))
 }
 \arguments{
-\item{data}{data.frame}
+\item{data}{data.frame.}
 
-\item{names}{column name of names}
+\item{names}{column name of names to use in the plot.}
 
-\item{values}{column name of values to plot}
+\item{values}{column name of values to plot.}
 
-\item{sort.names}{order or not}
+\item{sort.names}{order names according to value (TRUE, default) or not (FALSE).}
 
-\item{init.size}{size of the healthbar}
+\item{init.size}{size of the healthbar. See details.}
 
-\item{cuts}{where to change the colors}
+\item{cuts}{numeric vector of length 3. See details.}
 }
 \description{
-plot stuff and things
+A barchart in the style of a HP bar.
+}
+\details{
+\code{init.size} controls the height of the bar. The more names are used, the smaller
+the value should be. The values in \code{cuts} should be decreasing in the interval (0,1).
+}
+\examples{
+\dontrun{
+gghealth(pokemon[1:10,],"name","base_total",init.size = 5)+
+ labs(x="",y="Stats Total")
+}
 }

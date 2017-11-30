@@ -31,19 +31,29 @@
 #   mutate(defense=defense/max(defense)) %>%
 #   ggplot(aes(x=reorder(name,defense)))+geom_healthbar(aes(y=defense))+coord_flip()
 
-#' healthbar plot
+#' HP bar chart
 #'
-#'plot stuff and things
+#'A barchart in the style of a HP bar.
 #'
-#'@param data data.frame
-#'@param names column name of names
-#'@param values column name of values to plot
-#'@param sort.names order or not
-#'@param init.size size of the healthbar
-#'@param cuts where to change the colors
+#'@param data data.frame.
+#'@param names column name of names to use in the plot.
+#'@param values column name of values to plot.
+#'@param sort.names order names according to value (TRUE, default) or not (FALSE).
+#'@param init.size size of the healthbar. See details.
+#'@param cuts numeric vector of length 3. See details.
+#'
+#'@details \code{init.size} controls the height of the bar. The more names are used, the smaller
+#'the value should be. The values in \code{cuts} should be decreasing in the interval (0,1).
+#'
 #'@export
+#'@examples
+#'\dontrun{
+#'gghealth(pokemon[1:10,],"name","base_total",init.size = 5)+
+#'  labs(x="",y="Stats Total")
+#'}
 gghealth <- function(data,names,values,sort.names=TRUE,
                      init.size=3,cuts = c(0.8,0.4,0.2)){
+
   fracs <- (data[[values]]-min(data[[values]]))/(max(data[[values]])-min(data[[values]]))
   max_val <- max(data[[values]])
   init.size <- max(init.size,3)

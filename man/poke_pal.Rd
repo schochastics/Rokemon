@@ -21,3 +21,6 @@ Color palettes generated from Pokemon sprites.
 All palettes were constructed automatically and might thus not be very meaningful.
 Better pokemon palettes can be found in the package \href{https://github.com/timcdlucas/palettetown}{palettetown}
 }
+\examples{
+poke_pal("pikachu",3)
+}

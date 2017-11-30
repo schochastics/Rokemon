@@ -7,5 +7,5 @@
 theme_instinct()
 }
 \description{
-Blasting off
+ggplot theme that simply adds a yellow background to the plot.
 }

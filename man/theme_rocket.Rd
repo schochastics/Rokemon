@@ -7,8 +7,26 @@
 theme_rocket(...)
 }
 \arguments{
-\item{...}{theme stuff}
+\item{...}{additional parameters to ggplot2::theme()}
 }
 \description{
-Blasting off
+ggplot theme of Team Rocket. Meowth that's right!
+}
+\examples{
+\dontrun{
+#create a Pokemon type effectiveness chart
+library(tidyverse)
+
+pokemon \%>\%
+  distinct(type1,.keep_all=TRUE) \%>\%
+  select(defender = type1,against_bug:against_water) \%>\%
+  gather(attacker,effect,against_bug:against_water) \%>\%
+  mutate(attacker = str_replace_all(attacker,"against_",""))  \%>\%
+  ggplot(aes(y=attacker,x=defender,fill=factor(effect)))+
+  geom_tile()+
+  geom_text(aes(label=ifelse(effect!=1,effect,"")))+
+  scale_fill_manual(values=c("#8B1A1A", "#CD2626", "#EE2C2C", "#FFFFFF", "#00CD00", "#008B00"))+
+  theme_rocket(legend.position="none")+
+  labs(title="Effectiveness Table")
+}
 }

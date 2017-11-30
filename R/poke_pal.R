@@ -8,7 +8,8 @@
 #'Better pokemon palettes can be found in the package \href{https://github.com/timcdlucas/palettetown}{palettetown}
 #'@return A color palette
 #'@export
-#'
+#'@examples
+#'poke_pal("pikachu",3)
 poke_pal <- function(name,n){
 
   name <- tolower(name)

@@ -1,9 +1,17 @@
 #' Gamyboy inspired ggplot theme
 #'
-#' Theme based on the first generation gameboy.
+#' Theme based on the first generation of the Gameboy.
 #'
 #' @export
-
+#' @examples
+#' \dontrun{
+#' library(ggplot2)
+#'
+#' ggplot(pokemon,aes(attack,defense))+
+#'  geom_point(shape = 15,col = c("#006400"),size=2)+
+#'  theme_gameboy()+
+#'  labs(title = "Classic Gameboy Theme")
+#'}
 theme_gameboy <- function() {
   title_font <- "pokemon-font"
 
@@ -25,9 +33,10 @@ theme_gameboy <- function() {
 }
 
 #-------------------------------------------------------------------------------
-#' Health Bar theme
+#' Health bar theme
 #'
 #' Theme used in gghealth.
+#'
 #'
 #' @export
 theme_status <- function(){
@@ -52,11 +61,28 @@ theme_status <- function(){
 #-------------------------------------------------------------------------------
 #' Theme Rocket
 #'
-#' Blasting off
+#' ggplot theme of Team Rocket. Meowth that's right!
 #'
-#' @param ... theme stuff
+#' @param ... additional parameters to ggplot2::theme()
 #'
 #' @export
+#' @examples
+#' \dontrun{
+#' #create a Pokemon type effectiveness chart
+#' library(tidyverse)
+#'
+#' pokemon %>%
+#'   distinct(type1,.keep_all=TRUE) %>%
+#'   select(defender = type1,against_bug:against_water) %>%
+#'   gather(attacker,effect,against_bug:against_water) %>%
+#'   mutate(attacker = str_replace_all(attacker,"against_",""))  %>%
+#'   ggplot(aes(y=attacker,x=defender,fill=factor(effect)))+
+#'   geom_tile()+
+#'   geom_text(aes(label=ifelse(effect!=1,effect,"")))+
+#'   scale_fill_manual(values=c("#8B1A1A", "#CD2626", "#EE2C2C", "#FFFFFF", "#00CD00", "#008B00"))+
+#'   theme_rocket(legend.position="none")+
+#'   labs(title="Effectiveness Table")
+#' }
 theme_rocket <- function(...){
   rocket <- ggplot2::theme(panel.background = ggplot2::element_rect(fill="#FFFFFF",colour=NA),
         plot.background =  ggplot2::element_rect(fill="#0F0F0F",colour=NA),
@@ -83,14 +109,26 @@ theme_rocket <- function(...){
   return(rocket)
 }
 #-------------------------------------------------------------------------------
-#' Pogo Team Logo as background
+#' Pokemon Go Team Logos
 #'
-#'enhance
+#' Enhance your plots with a background picture of your favorite Pokemon Go team.
 #'
 #'@param team string. either 'mystic', 'valor' or 'instinct'
 #'@param opacity opacity of team logo.
 #'
 #' @export
+#' @examples
+#' \dontrun{
+#' library(tiduverse)
+#'
+#' pokemon %>%
+#'  dplyr::filter(type1=="water") %>%
+#'  ggplot(aes(defense,attack))+
+#'  annotate_pogo(team = "mystic")+
+#'  geom_point()+
+#'  theme_mystic()+
+#'  labs(title="Team Mystic",subtitle="Water Pokemon")
+#' }
 annotate_pogo <- function(team="mystic",opacity=0.5){
   if(!team%in%c("mystic","valor","instinct")){
     stop("team must be one of 'mystic', 'valor','instinct'")
@@ -107,7 +145,7 @@ annotate_pogo <- function(team="mystic",opacity=0.5){
 #-------------------------------------------------------------------------------
 #' Theme Mystic
 #'
-#' Blasting off
+#' ggplot theme that simply adds a blue background to the plot.
 #'
 #' @export
 theme_mystic <- function(){
@@ -129,7 +167,7 @@ theme_mystic <- function(){
 #-------------------------------------------------------------------------------
 #' Theme Valor
 #'
-#' Blasting off
+#' ggplot theme that simply adds a red background to the plot.
 #'
 #' @export
 theme_valor <- function(){
@@ -144,7 +182,7 @@ theme_valor <- function(){
 #-------------------------------------------------------------------------------
 #' Theme Instinct
 #'
-#' Blasting off
+#' ggplot theme that simply adds a yellow background to the plot.
 #'
 #' @export
 theme_instinct <- function(){

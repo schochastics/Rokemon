@@ -2,7 +2,7 @@
 % Please edit documentation in R/theme_gameboy.R
 \name{annotate_pogo}
 \alias{annotate_pogo}
-\title{Pogo Team Logo as background}
+\title{Pokemon Go Team Logos}
 \usage{
 annotate_pogo(team = "mystic", opacity = 0.5)
 }
@@ -12,5 +12,18 @@ annotate_pogo(team = "mystic", opacity = 0.5)
 \item{opacity}{opacity of team logo.}
 }
 \description{
-enhance
+Enhance your plots with a background picture of your favorite Pokemon Go team.
+}
+\examples{
+\dontrun{
+library(tiduverse)
+
+pokemon \%>\%
+ dplyr::filter(type1=="water") \%>\%
+ ggplot(aes(defense,attack))+
+ annotate_pogo(team = "mystic")+
+ geom_point()+
+ theme_mystic()+
+ labs(title="Team Mystic",subtitle="Water Pokemon")
+}
 }

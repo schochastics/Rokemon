@@ -7,5 +7,15 @@
 theme_gameboy()
 }
 \description{
-Theme based on the first generation gameboy.
+Theme based on the first generation of the Gameboy.
+}
+\examples{
+\dontrun{
+library(ggplot2)
+
+ggplot(pokemon,aes(attack,defense))+
+ geom_point(shape = 15,col = c("#006400"),size=2)+
+ theme_gameboy()+
+ labs(title = "Classic Gameboy Theme")
+}
 }

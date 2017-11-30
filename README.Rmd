@@ -20,6 +20,7 @@ knitr::opts_chunk$set(
 
 ![](rokemon.png) 
 
+An R package 
 
 # Install
 ```{r install, eval = FALSE}
@@ -34,7 +35,11 @@ library(tidyverse)
 
 # Themes
 
-Theme Rocket
+The package includes several themes to style your ggplots. 
+
+## Theme Rocket
+
+*(See what I did there...)*
 
 ```{r theme-rocket}
 ggplot(pokemon,aes(attack,defense))+
@@ -48,7 +53,9 @@ ggplot(pokemon,aes(attack,defense))+
 
 ```
 
-Gamyboy theme
+## Gamyboy theme
+
+If you want to get nostalgic.
 
 ```{r theme-gameboy}
 ggplot(pokemon,aes(attack,defense))+
@@ -57,7 +64,11 @@ ggplot(pokemon,aes(attack,defense))+
   labs(title = "Classic Gameboy Theme")
 ```
 
-gghealth using Status theme
+## Status theme and health bars.
+
+A theme inspired by HP bar in older Pokemon games. The theme is used in `gghealth`,
+a function that plots bar charts in HP bar style.
+
 ```{r gghealth}
 pokemon[1:10,] %>% 
   gghealth("name","base_total",init.size = 5)+
@@ -65,26 +76,9 @@ pokemon[1:10,] %>%
 
 ```
 
+## Pokemon Go
 
-# Examples
-
-Using `theme_rocket()` to create an efficiency table
-```{r effectiveness,fig.width=10}
-pokemon %>%
-  distinct(type1,.keep_all=TRUE) %>%
-  select(defender = type1,against_bug:against_water) %>%
-  gather(attacker,effect,against_bug:against_water) %>%
-  mutate(attacker = str_replace_all(attacker,"against_",""))  %>%
-  ggplot(aes(y=attacker,x=defender,fill=factor(effect)))+
-  geom_tile()+
-  geom_text(aes(label=ifelse(effect!=1,effect,"")))+
-  scale_fill_manual(values=c("#8B1A1A", "#CD2626", "#EE2C2C", "#FFFFFF", "#00CD00", "#008B00"))+
-  theme_rocket(legend.position="none")+
-  labs(title="Efficiency Table")
-
-```
-
-Annotate your plots with your favorite Pokémon Go team.
+Annotate your plots with the logo of your favorite Pokémon Go team.
 
 ```{r pogo-teams,fig.height=4,fig.width=10}
 
@@ -104,6 +98,25 @@ p3 <- pokemon %>%
   labs(title="Team Instinct",subtitle="Electric Pokemon")
 
 gridExtra::grid.arrange(grobs=list(p1,p2,p3),ncol=3)
+
+```
+
+
+# Examples
+
+Using `theme_rocket()` to create an effectiveness table of Pokemon types.
+```{r effectiveness,fig.width=10}
+pokemon %>%
+  distinct(type1,.keep_all=TRUE) %>%
+  select(defender = type1,against_bug:against_water) %>%
+  gather(attacker,effect,against_bug:against_water) %>%
+  mutate(attacker = str_replace_all(attacker,"against_",""))  %>%
+  ggplot(aes(y=attacker,x=defender,fill=factor(effect)))+
+  geom_tile()+
+  geom_text(aes(label=ifelse(effect!=1,effect,"")))+
+  scale_fill_manual(values=c("#8B1A1A", "#CD2626", "#EE2C2C", "#FFFFFF", "#00CD00", "#008B00"))+
+  theme_rocket(legend.position="none")+
+  labs(title="Effectiveness Table")
 
 ```
 

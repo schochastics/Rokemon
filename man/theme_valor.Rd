@@ -7,5 +7,5 @@
 theme_valor()
 }
 \description{
-Blasting off
+ggplot theme that simply adds a red background to the plot.
 }

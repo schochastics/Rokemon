@@ -2,7 +2,7 @@
 % Please edit documentation in R/theme_gameboy.R
 \name{theme_status}
 \alias{theme_status}
-\title{Health Bar theme}
+\title{Health bar theme}
 \usage{
 theme_status()
 }
