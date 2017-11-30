@@ -62,9 +62,9 @@ Using `theme_rocket()` to create an efficiency table
 ``` r
 pokemon %>%
   distinct(type1,.keep_all=TRUE) %>%
-  select(attacker = type1,against_bug:against_water) %>%
-  gather(defender,effect,against_bug:against_water) %>%
-  mutate(defender = str_replace_all(defender,"against_",""))  %>%
+  select(defender = type1,against_bug:against_water) %>%
+  gather(attacker,effect,against_bug:against_water) %>%
+  mutate(attacker = str_replace_all(attacker,"against_",""))  %>%
   ggplot(aes(y=attacker,x=defender,fill=factor(effect)))+
   geom_tile()+
   geom_text(aes(label=ifelse(effect!=1,effect,"")))+
