@@ -18,8 +18,8 @@
   # }
 
   fnt <- extrafont::fonttable()
-  if (!all(c("Pokemon Hollow","Pokemon Solid","pokemon-font")%in% fnt$FamilyName)) {
-    packageStartupMessage("NOTE: Pokemon fonts are required to use this package.")
+  if (!all(c("pokemon-font")%in% fnt$FamilyName)) {
+    packageStartupMessage("NOTE: Pokemon font are required to use this package.")
     packageStartupMessage("      Please use Rokemon::import_pokefont() to install them")
   } # nocov end
 
