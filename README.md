@@ -104,7 +104,7 @@ poke_pie(path_to_sprites,poke)
 
 ![](figures/poke-pies.png)
 
-This function is a reimplementation of [this](https://gist.github.com/need12648430/4d681c9d1b18745ce159) code, which was posted on [reddit](https://www.reddit.com/r/pokemon/comments/2ey1pw/last_night_i_wrote_a_processing_script_that/ck45c21/)
+The function is a reimplementation of [this](https://gist.github.com/need12648430/4d681c9d1b18745ce159) code, which was posted on [reddit](https://www.reddit.com/r/pokemon/comments/2ey1pw/last_night_i_wrote_a_processing_script_that/ck45c21/) a while ago.
 
 Examples
 ========
