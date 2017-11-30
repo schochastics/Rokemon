@@ -46,7 +46,6 @@ gghealth <- function(data,names,values,sort.names=TRUE,
                      init.size=3,cuts = c(0.8,0.4,0.2)){
   fracs <- (data[[values]]-min(data[[values]]))/(max(data[[values]])-min(data[[values]]))
   max_val <- max(data[[values]])
-  print(fracs)
   init.size <- max(init.size,3)
 
   if(sort.names){
@@ -62,8 +61,6 @@ gghealth <- function(data,names,values,sort.names=TRUE,
   hp_col[fracs>=cuts[2]] <- 2
   hp_col[fracs>=cuts[1]] <- 1
 
-
-  print(hp_col)
   data[["hp_col"]] <- factor(hp_col,levels=1:4)
 
   p <- ggplot2::ggplot(data,ggplot2::aes_string(x = names))+

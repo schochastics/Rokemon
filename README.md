@@ -48,8 +48,6 @@ gghealth using Status theme
 pokemon[1:10,] %>% 
   gghealth("name","base_total",init.size = 5)+
   labs(x="",y="Stats Total")
-#>  [1] 0.2802 0.4784 0.9795 0.2597 0.4784 1.0000 0.2711 0.4784 0.9909 0.0000
-#>  [1] 3 2 1 3 2 1 3 2 1 4
 ```
 
 <img src="figures/gghealth-1.png" width="80%" style="display: block; margin: auto;" />
