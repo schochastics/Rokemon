@@ -1,4 +1,4 @@
-#' Gamyboy inspired ggplot theme
+#' Classic Gamyboy inspired ggplot theme
 #'
 #' Theme based on the first generation of the Gameboy.
 #'
@@ -29,6 +29,41 @@ theme_gameboy <- function() {
           legend.text = ggplot2::element_text(colour="#561E94"),
           legend.key = ggplot2::element_rect(fill="#C1BDB7",colour="black"),
           plot.caption = ggplot2::element_text(colour = "#A20055"))
+  return(gb)
+}
+#-------------------------------------------------------------------------------
+#' Gamyboy Advanced inspired ggplot theme
+#'
+#' Theme based on the Gameboy Advanced.
+#'
+#' @export
+#' @examples
+#' \dontrun{
+#' library(ggplot2)
+#'
+#' ggplot(pokemon,aes(attack,defense))+
+#'  geom_point(shape = 15,col = c("#006400"),size=2)+
+#'  theme_gameboy()+
+#'  labs(title = "Classic Gameboy Theme")
+#'}
+theme_gba <- function() {
+  title_font <- "pokemon-font"
+
+  gb <- ggplot2::theme(panel.grid = ggplot2::element_blank(),
+               panel.background = ggplot2::element_rect(fill="#00BFFF"),
+               panel.border = ggplot2::element_rect(fill=NA,colour="black",size=4),
+               plot.background = ggplot2::element_rect(fill="#68228B"),
+               text = ggplot2::element_text(family = "pokemon-font"),
+               plot.title = ggplot2::element_text(family = title_font,colour="black"),
+               plot.subtitle = ggplot2::element_text(family = title_font,colour="black"),
+               axis.ticks = ggplot2::element_line(colour="black"),
+               axis.text = ggplot2::element_text(colour="#8F8B8F"),
+               axis.title = ggplot2::element_text(colour="#8F8B8F"),
+               legend.background = ggplot2::element_rect(fill="#68228B"),
+               legend.position = "bottom",
+               legend.text = ggplot2::element_text(colour="#8F8B8F"),
+               legend.key = ggplot2::element_rect(fill="#68228B",colour="black"),
+               plot.caption = ggplot2::element_text(colour = "#8F8B8F"))
   return(gb)
 }
 
