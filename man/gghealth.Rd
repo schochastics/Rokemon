@@ -5,7 +5,7 @@
 \title{healthbar plot}
 \usage{
 gghealth(data, names, values, sort.names = TRUE, init.size = 3,
-  cuts = c(0.75, 0.5, 0.25))
+  cuts = c(0.8, 0.4, 0.2))
 }
 \arguments{
 \item{data}{data.frame}

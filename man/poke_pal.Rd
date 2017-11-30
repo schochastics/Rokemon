@@ -7,7 +7,7 @@
 poke_pal(name, n)
 }
 \arguments{
-\item{name}{string. Should be}
+\item{name}{string. name of a Pokemon who's colors should be used}
 
 \item{n}{integer specifying the number of colors to return.}
 }
@@ -15,8 +15,9 @@ poke_pal(name, n)
 A color palette
 }
 \description{
-stuff about things
+Color palettes generated from Pokemon sprites.
 }
 \details{
-name matching
+All palettes were constructed automatically and might thus not be very meaningful.
+Better pokemon palettes can be found in the package \href{https://github.com/timcdlucas/palettetown}{palettetown}
 }
