@@ -39,8 +39,8 @@ poke_pie <- function(path_to_sprites="",poke){
     B = as.vector(sprite[,,3])
   )
   img_tbl <- dplyr::count(dplyr::group_by_(img_rgb,"R","G","B"))
-  img_tbl <- img_tbl[img_tbl$R!=0 & img_tbl$G!=0 & img_tbl$B!=0,]
-  img_tbl <- dplyr::ungroup(img_tbl[img_tbl$R!=1 & img_tbl$G!=1 & img_tbl$B!=1,])
+  img_tbl <- img_tbl[img_tbl$R!=0 | img_tbl$G!=0 | img_tbl$B!=0,]
+  img_tbl <- dplyr::ungroup(img_tbl[img_tbl$R!=1 | img_tbl$G!=1 | img_tbl$B!=1,])
   img_tbl <- dplyr::arrange_(img_tbl,"n")
   img_tbl$col <- grDevices::rgb(img_tbl$R,img_tbl$G,img_tbl$B)
 
