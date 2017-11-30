@@ -101,6 +101,20 @@ gridExtra::grid.arrange(grobs=list(p1,p2,p3),ncol=3)
 
 ```
 
+# Poke Pie
+
+Create pie charts of the color distribution of Pokemon sprites. Download all sprites, for
+example from [here](https://github.com/PokeAPI/sprites).
+
+```{r poke-pie,eval=FALSE}
+#basic usage
+poke_pie(path_to_sprites,poke)
+```
+
+![](figures/poke-pies.png)
+
+The function is a reimplementation of [this](https://gist.github.com/need12648430/4d681c9d1b18745ce159)
+code, which was posted on [reddit](https://www.reddit.com/r/pokemon/comments/2ey1pw/last_night_i_wrote_a_processing_script_that/ck45c21/) a while ago.
 
 # Examples
 
@@ -155,4 +169,4 @@ install.packages('palettetown')
 * Pogo Logos downloaded [here](https://dribbble.com/shots/2831980-Pok-mon-GO-Team-Logos-Vector-Download)
 * Pokémon data download from [Kaggle](https://www.kaggle.com/rounakbanik/pokemon), originally
 scraped from [serebii.net](http://serebii.net/)
-* Sprites used for color palettes downloaded [here](https://github.com/PokeAPI/sprites)
+* Sprites for `poke_pie` can be found [here](https://github.com/PokeAPI/sprites)

@@ -92,6 +92,20 @@ gridExtra::grid.arrange(grobs=list(p1,p2,p3),ncol=3)
 
 <img src="figures/pogo-teams-1.png" width="80%" style="display: block; margin: auto;" />
 
+Poke Pie
+========
+
+Create pie charts of the color distribution of Pokemon sprites. Download all sprites, for example from [here](https://github.com/PokeAPI/sprites).
+
+``` r
+#basic usage
+poke_pie(path_to_sprites,poke)
+```
+
+![](figures/poke-pies.png)
+
+This function is a reimplementation of [this](https://gist.github.com/need12648430/4d681c9d1b18745ce159) code, which was posted on [reddit](https://www.reddit.com/r/pokemon/comments/2ey1pw/last_night_i_wrote_a_processing_script_that/ck45c21/)
+
 Examples
 ========
 
@@ -116,9 +130,9 @@ pokemon %>%
 Fonts
 =====
 
-Download the Font [here](https://github.com/Superpencil/pokemon-font/releases/tag/v1.8.1)
+Download the Font [here](https://github.com/Superpencil/pokemon-font/releases/tag/v1.8.1) and install it.
 
-In order to use this font in R you need the `extrafont` package.
+In order to use the font in R you need the `extrafont` package.
 
 ``` r
 install.packages("extrafont")
@@ -126,7 +140,7 @@ extrafont::font_import() #only run ones
 extrafont::loadfonts()
 ```
 
-Alternatively, you can use the function `import_pokefont()`
+Alternatively, you can use the function `import_pokefont()`.
 
 ``` r
 import_pokefont()
@@ -135,7 +149,7 @@ import_pokefont()
 Color Palettes
 ==============
 
-R package including color palettes
+The package also includes color palettes, which were automatically generated from all 801 pokemon sprites. I so far did not check all palettes, so there may well be some weird ones. A better alternative would be to use the dedicated package `palettetown`. See the github [repo](https://github.comt/imcdlucas/palettetown) for help.
 
 ``` r
 install.packages('palettetown')
@@ -147,4 +161,4 @@ Addendum
 -   Logo generated with [fontmeme](https://fontmeme.com/pokemon-font/)
 -   Pogo Logos downloaded [here](https://dribbble.com/shots/2831980-Pok-mon-GO-Team-Logos-Vector-Download)
 -   Pokémon data download from [Kaggle](https://www.kaggle.com/rounakbanik/pokemon), originally scraped from [serebii.net](http://serebii.net/)
--   [Sprites](https://github.com/PokeAPI/sprites)
+-   Sprites for `poke_pie` can be found [here](https://github.com/PokeAPI/sprites)

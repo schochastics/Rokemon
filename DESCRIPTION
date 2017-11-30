@@ -10,5 +10,7 @@ LazyData: true
 Imports: extrafont,
     png,
     grid,
-    ggplot2
+    ggplot2,
+    cowplot,
+    dplyr
 RoxygenNote: 6.0.1
