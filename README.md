@@ -33,7 +33,7 @@ Pokemon Palettes
 Install
 =======
 
-From Cran
+From CRAN
 ---------
 
 not released yet
@@ -164,7 +164,7 @@ display_poke_pal(name)
 
 ![](figures/palettes.png)
 
-Additionally there is also a palette for Team Rocket (`rocket_pal`) and the Pokemon Types (`type_pal`). ![](figures/rocket-type-pal.png)
+Additionally there is also a palette Pokemon Types, used by `scale_color_poketype()` and `scale_fill_poketype()`. ![](figures/rocket-type-pal.png)
 
 I did not check all Pokemon palettes, so there may well be some meaningless ones. A better alternative would be to use the dedicated package `palettetown`. See the github [repo](https://github.comt/imcdlucas/palettetown) for help.
 
