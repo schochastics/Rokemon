@@ -6,5 +6,5 @@
 \alias{Rokemon-package}
 \title{Rokemon}
 \description{
-An R package for your favorite game. More Help can be found on \url{https://github.com/schochastics/Rokemon}{github}
+An R package for your favorite game. More Help can be found on github: \url{https://github.com/schochastics/Rokemon}
 }

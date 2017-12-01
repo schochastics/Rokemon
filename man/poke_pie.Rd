@@ -16,6 +16,6 @@ Create Pie Charts of the color distribution of Pokemon sprites.
 }
 \details{
 Sprites are not provided and have to be download prior of usage. It is important
-that the sprites are numbered from 1.png to 801.png. \url{https://github.com/PokeAPI/sprites}{This}
-github repo contains all sprites in the write format and has been used for testing.
+that the sprites are numbered from 1.png to 801.png. \url{https://github.com/PokeAPI/sprites}
+contains all sprites in the right format and has been used for testing.
 }
