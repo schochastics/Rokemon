@@ -138,6 +138,24 @@ pokemon %>%
 
 <img src="figures/effectiveness-1.png" width="80%" style="display: block; margin: auto;" />
 
+Color Palettes
+==============
+
+The package also includes color palettes, which were automatically generated from all 801 pokemon sprites.
+
+``` r
+poke_pal(name,n)
+display_poke_pal(name)
+```
+
+![](figures/palettes.png)
+
+I did not check all palettes, so there may well be some meaningless ones. A better alternative would be to use the dedicated package `palettetown`. See the github [repo](https://github.comt/imcdlucas/palettetown) for help.
+
+``` r
+install.packages('palettetown')
+```
+
 Fonts
 =====
 
@@ -155,15 +173,6 @@ Alternatively, you can use the function `import_pokefont()`.
 
 ``` r
 import_pokefont()
-```
-
-Color Palettes
-==============
-
-The package also includes color palettes, which were automatically generated from all 801 pokemon sprites. So far, I did not check all palettes, so there may well be some weird ones. A better alternative would be to use the dedicated package `palettetown`. See the github [repo](https://github.comt/imcdlucas/palettetown) for help.
-
-``` r
-install.packages('palettetown')
 ```
 
 Addendum

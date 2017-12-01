@@ -2,9 +2,12 @@
 % Please edit documentation in R/poke_pal.R
 \name{poke_pal}
 \alias{poke_pal}
+\alias{display_poke_pal}
 \title{Pokemon inspired Palettes}
 \usage{
 poke_pal(name, n)
+
+display_poke_pal(name = "pikachu")
 }
 \arguments{
 \item{name}{string. name of a Pokemon who's colors should be used}
@@ -18,8 +21,9 @@ A color palette
 Color palettes generated from Pokemon sprites.
 }
 \details{
-All palettes were constructed automatically and might thus not be very meaningful.
-Better pokemon palettes can be found in the package \href{https://github.com/timcdlucas/palettetown}{palettetown}
+\code{display_poke_pal} can be used to display colors of a poke palette.
+All palettes were computed automatically and might not all be very meaningful.
+Other (and better) pokemon palettes can be found in the package \href{https://github.com/timcdlucas/palettetown}{palettetown}
 }
 \examples{
 poke_pal("pikachu",3)
