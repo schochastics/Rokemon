@@ -209,6 +209,8 @@ pokemon %>%
 Addendum
 ========
 
+*The package is in an early stage, so expect some ~~caterpies~~ bugs*
+
 -   Logo generated with [fontmeme](https://fontmeme.com/pokemon-font/)
 -   Pogo Logos downloaded [here](https://dribbble.com/shots/2831980-Pok-mon-GO-Team-Logos-Vector-Download)
 -   Pokémon data download from [Kaggle](https://www.kaggle.com/rounakbanik/pokemon), originally scraped from [serebii.net](http://serebii.net/)

@@ -21,7 +21,7 @@ knitr::opts_chunk$set(
 ![](rokemon.png) 
 
 An R package to create Pokemon inspired ggplots. It also comes with dataset of 801 Pokemon
-with 41 different features (Gotta analyze'em all!).
+with 41 different features (Gotta analyze'em all!). 
 
 # Overview
 
@@ -213,6 +213,8 @@ pokemon %>%
 ```
 
 # Addendum
+
+*The package is in an early stage, so expect some ~~caterpies~~ bugs*
 
 * Logo generated with [fontmeme](https://fontmeme.com/pokemon-font/)
 * Pogo Logos downloaded [here](https://dribbble.com/shots/2831980-Pok-mon-GO-Team-Logos-Vector-Download)
