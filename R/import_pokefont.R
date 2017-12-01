@@ -10,7 +10,7 @@ import_pokefont <- function() {
 
   message(
     sprintf(
-      "You might need to install these fonts on your system too.\n\nYou can find them in [%s]",
+      "You might need to install the font on your system too.\n\nYou can find them in [%s]",
       poke_font_dir )
   )
 
