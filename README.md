@@ -3,6 +3,35 @@
 
 An R package to create Pokemon inspired ggplots. It also comes with dataset of 801 Pokemon with 41 different features (Gotta analyze'em all!).
 
+Overview
+========
+
+For more details and examples see next sections.
+
+Data
+
+-   `pokemon`: Data frame containing attributes and stats of 801 Pokemon.
+-   `rocket_pal`: Team Rocket color palette.
+-   `unown`: All unown Pokemon as character. Only work with the included font.
+-   `type_pal`: Color Palette for Pokemon types.
+
+Functions
+
+-   `gghealth()`: HP bar inspired Bar charts.
+-   `poke_pie()`: create pie charts from color distribution of Pokemon sprites.
+
+Themes
+
+-   `theme_rocket()`: Team Rocket theme
+-   `theme_gameboy()` and `theme_gba()`: classic Gameboy and Advanced theme
+-   `theme_status()`: inspired by Pokemon status bar
+-   `theme_mystic()`, `theme_valor()`, `theme_instinct()`: Pokemon Go teams theme; work well with `annotate_pogo()`
+
+Pokemon Palettes
+
+-   `poke_pal()`: color palettes created from Pokemon sprites
+-   `display_poke_pal()`: view a Pokemon color palette
+
 Install
 =======
 
@@ -21,7 +50,7 @@ data(pokemon)
 Themes
 ======
 
-The package includes several themes to style your ggplots.
+The package includes several themes for ggplot.
 
 Theme Rocket
 ------------
@@ -150,7 +179,9 @@ display_poke_pal(name)
 
 ![](figures/palettes.png)
 
-I did not check all palettes, so there may well be some meaningless ones. A better alternative would be to use the dedicated package `palettetown`. See the github [repo](https://github.comt/imcdlucas/palettetown) for help.
+Additionally there is also a palette for Team Rocket (`rocket_pal`) and the Pokemon Types (`type_pal`). ![](figures/rocket-type-pal.png)
+
+I did not check all Pokemon palettes, so there may well be some meaningless ones. A better alternative would be to use the dedicated package `palettetown`. See the github [repo](https://github.comt/imcdlucas/palettetown) for help.
 
 ``` r
 install.packages('palettetown')
