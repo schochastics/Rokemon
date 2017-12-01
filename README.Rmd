@@ -51,6 +51,12 @@ Pokemon Palettes
 * `display_poke_pal()`: view a Pokemon color palette
 
 # Install
+
+## From Cran
+
+not released yet
+
+## Developers version
 ```{r install, eval = FALSE}
 #install.packages("devtools")
 devtools::install_github("schochastics/Rokemon")

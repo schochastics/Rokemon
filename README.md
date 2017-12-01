@@ -33,6 +33,14 @@ Pokemon Palettes
 Install
 =======
 
+From Cran
+---------
+
+not released yet
+
+Developers version
+------------------
+
 ``` r
 #install.packages("devtools")
 devtools::install_github("schochastics/Rokemon")
