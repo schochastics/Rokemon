@@ -146,27 +146,6 @@ poke_pie(path_to_sprites,pokemon_name)
 
 The function is a reimplementation of [this](https://gist.github.com/need12648430/4d681c9d1b18745ce159) code, which was posted on [reddit](https://www.reddit.com/r/pokemon/comments/2ey1pw/last_night_i_wrote_a_processing_script_that/ck45c21/) a while ago.
 
-Examples
-========
-
-Using `theme_rocket()` to create an effectiveness table of Pokemon types.
-
-``` r
-pokemon %>%
-  distinct(type1,.keep_all=TRUE) %>%
-  select(defender = type1,against_bug:against_water) %>%
-  gather(attacker,effect,against_bug:against_water) %>%
-  mutate(attacker = str_replace_all(attacker,"against_",""))  %>%
-  ggplot(aes(y=attacker,x=defender,fill=factor(effect)))+
-  geom_tile()+
-  geom_text(aes(label=ifelse(effect!=1,effect,"")))+
-  scale_fill_manual(values=c("#8B1A1A", "#CD2626", "#EE2C2C", "#FFFFFF", "#00CD00", "#008B00"))+
-  theme_rocket(legend.position="none")+
-  labs(title="Effectiveness Table")
-```
-
-<img src="figures/effectiveness-1.png" width="80%" style="display: block; margin: auto;" />
-
 Color Palettes
 ==============
 
@@ -205,6 +184,27 @@ Alternatively, you can use the function `import_pokefont()`.
 ``` r
 import_pokefont()
 ```
+
+Example use of data
+===================
+
+Using `theme_rocket()` to create an effectiveness table of Pokemon types.
+
+``` r
+pokemon %>%
+  distinct(type1,.keep_all=TRUE) %>%
+  select(defender = type1,against_bug:against_water) %>%
+  gather(attacker,effect,against_bug:against_water) %>%
+  mutate(attacker = str_replace_all(attacker,"against_",""))  %>%
+  ggplot(aes(y=attacker,x=defender,fill=factor(effect)))+
+  geom_tile()+
+  geom_text(aes(label=ifelse(effect!=1,effect,"")))+
+  scale_fill_manual(values=c("#8B1A1A", "#CD2626", "#EE2C2C", "#FFFFFF", "#00CD00", "#008B00"))+
+  theme_rocket(legend.position="none")+
+  labs(title="Effectiveness Table")
+```
+
+<img src="figures/effectiveness-1.png" width="80%" style="display: block; margin: auto;" />
 
 Addendum
 ========
