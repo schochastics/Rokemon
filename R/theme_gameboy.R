@@ -231,3 +231,45 @@ theme_instinct <- function(){
   )
   return(instinct)
 }
+
+#-------------------------------------------------------------------------------
+#'Pokemon color scale
+#'
+#' This allows to use the Pokemon type color scale in ggplot.
+#'
+#'@param ... common discrete scale parameters for ggplot
+#'@export
+#'@examples
+#'library(ggplot2)
+#'
+#'ggplot(pokemon,aes(defense,attack))+
+#'   geom_point(aes(col=type1))+
+#'   scale_color_poketype()
+#'
+#'ggplot(pokemon,aes(type1))+
+#'   geom_bar(aes(fill=type1))+
+#'   scale_color_poketype()
+
+scale_color_poketype <- function(...){
+  type_pal <- c(`normal`= "#A8A77A",`fire`= "#EE8130",`water`= "#6390F0",
+              `electric`= "#F7D02C",`grass`= "#7AC74C",`ice`= "#96D9D6",
+              `fighting`= "#C22E28",`poison`= "#A33EA1",`ground`= "#E2BF65",
+                `flying`= "#A98FF3",`psychic`= "#F95587",`bug`= "#A6B91A",
+                  `rock`= "#B6A136",`ghost`= "#735797",`dragon`= "#6F35FC",
+                  `dark`= "#705746",`steel`= "#B7B7CE",`fairy`= "#D685AD")
+
+  ggplot2::scale_color_manual(values = type_pal,...)
+}
+
+#' @rdname scale_color_poketype
+#' @export
+scale_fill_poketype <- function(...){
+  type_pal <- c(`normal`= "#A8A77A",`fire`= "#EE8130",`water`= "#6390F0",
+                `electric`= "#F7D02C",`grass`= "#7AC74C",`ice`= "#96D9D6",
+                `fighting`= "#C22E28",`poison`= "#A33EA1",`ground`= "#E2BF65",
+                `flying`= "#A98FF3",`psychic`= "#F95587",`bug`= "#A6B91A",
+                `rock`= "#B6A136",`ghost`= "#735797",`dragon`= "#6F35FC",
+                `dark`= "#705746",`steel`= "#B7B7CE",`fairy`= "#D685AD")
+
+  ggplot2::scale_fill_manual(values = type_pal,...)
+}
