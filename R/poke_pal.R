@@ -843,7 +843,7 @@ poke_pal <- function(name,n){
 display_poke_pal <- function(name="pikachu"){
   pal <- poke_pal(name,6)
   n <- length(pal)
-  image(1:n, 1, as.matrix(1:n), col = pal,
-        xlab = "", ylab = name, xaxt = "n", yaxt = "n",
-        bty = "n")
+  graphics::image(1:n, 1, as.matrix(1:n), col = pal,
+            xlab = "", ylab = name, xaxt = "n", yaxt = "n",
+            bty = "n")
 }
