@@ -11,9 +11,6 @@ For more details and examples see next sections.
 Data
 
 -   `pokemon`: Data frame containing attributes and stats of 801 Pokemon.
--   `rocket_pal`: Team Rocket color palette.
--   `unown`: All unown Pokemon as character. Only work with the included font.
--   `type_pal`: Color Palette for Pokemon types.
 
 Functions
 
@@ -23,9 +20,10 @@ Functions
 Themes
 
 -   `theme_rocket()`: Team Rocket theme
--   `theme_gameboy()` and `theme_gba()`: classic Gameboy and Advanced theme
+-   `theme_gameboy()` and `theme_gba()`: classic Gameboy and Gameboy Advanced themes
 -   `theme_status()`: inspired by Pokemon status bar
 -   `theme_mystic()`, `theme_valor()`, `theme_instinct()`: Pokemon Go teams theme; work well with `annotate_pogo()`
+-   `scale_color_poketype()` and `scale_fill_poketype()`: Provides colors, if Pokemon types are mapped to color/fill
 
 Pokemon Palettes
 
@@ -205,6 +203,17 @@ pokemon %>%
 ```
 
 <img src="figures/effectiveness-1.png" width="80%" style="display: block; margin: auto;" />
+
+Using Pokemon type colors
+
+``` r
+ggplot(pokemon,aes(defense,attack))+
+  geom_point(aes(col=type1))+
+  scale_color_poketype()+
+  theme_bw()
+```
+
+<img src="figures/poketype-colors-1.png" width="80%" style="display: block; margin: auto;" />
 
 Addendum
 ========
