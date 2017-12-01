@@ -13,7 +13,7 @@ pokemon
 Pokemon Data
 }
 \references{
-Pokémon data download from [Kaggle](https://www.kaggle.com/rounakbanik/pokemon), originally
-scraped from [serebii.net](http://serebii.net/)
+Pokémon data download from Kaggle: \url{https://www.kaggle.com/rounakbanik/pokemon}, originally
+scraped from \url{http://serebii.net/}
 }
 \keyword{datasets}
