@@ -1,9 +1,9 @@
 .onAttach <- function(libname, pkgname) {
 
-  if (interactive()) {
-    packageStartupMessage(paste0("This package is in an early stage.\n",
-                                 "Check out https://github.com/schochastics/Rokemon for developments"))
-  }
+  # if (interactive()) {
+  #   packageStartupMessage(paste0("This package is in an early stage.\n",
+  #                                "Check out https://github.com/schochastics/Rokemon for developments"))
+  # }
 
 
   if (.Platform$OS.type == "windows")  { # nocov start
