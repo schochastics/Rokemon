@@ -1,7 +1,5 @@
 ---
-output:
-  md_document:
-    variant: markdown_github
+output: github_document
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
@@ -18,12 +16,12 @@ knitr::opts_chunk$set(
 )
 ```
 
-![](rokemon.png) 
+# Rokemon <img src="man/figures/logo.png" align="right" height="125px"/>
 
 An R package to create Pokemon inspired ggplots. It also comes with dataset of 801 Pokemon
 with 41 different features (Gotta analyze'em all!). 
 
-# Overview
+## Overview
 
 For more details and examples see next sections.
 
@@ -50,13 +48,9 @@ Pokemon Palettes
 * `poke_pal()`: color palettes created from Pokemon sprites
 * `display_poke_pal()`: view a Pokemon color palette
 
-# Install
+## Install
 
-## From CRAN
-
-not released yet
-
-## Developers version
+The developer version can be obtained from github.
 ```{r install, eval = FALSE}
 #install.packages("devtools")
 devtools::install_github("schochastics/Rokemon")
@@ -69,11 +63,11 @@ library(tidyverse)
 data(pokemon)
 ```
 
-# Themes
+## Themes
 
 The package includes several themes for ggplot. 
 
-## Theme Rocket
+### Theme Rocket
 
 *(See what I did there...)*
 
@@ -88,7 +82,7 @@ ggplot(pokemon,aes(attack,defense))+
 
 ```
 
-## Gamyboy theme
+### Gamyboy theme
 
 If you want to get nostalgic.
 
@@ -109,7 +103,7 @@ ggplot(pokemon,aes(attack,defense))+
 ```
 
 
-## Status theme and HP bar chart
+### Status theme and HP bar chart
 
 A theme inspired by HP bar in older Pokemon games. The theme is used in `gghealth`,
 a function that plots bar charts in HP bar style.
@@ -121,7 +115,7 @@ pokemon[1:10,] %>%
 
 ```
 
-## Pokemon Go
+### Pokemon Go
 
 Annotate your plots with the logo of your favorite Pokémon Go team.
 
@@ -146,7 +140,7 @@ gridExtra::grid.arrange(grobs=list(p1,p2,p3),ncol=3)
 
 ```
 
-# Poke Pie
+## Poke Pie
 
 Create pie charts of the color distribution of Pokemon sprites. Download all sprites, for
 example from [here](https://github.com/PokeAPI/sprites).
@@ -161,7 +155,7 @@ poke_pie(path_to_sprites,pokemon_name)
 The function is a reimplementation of [this](https://gist.github.com/need12648430/4d681c9d1b18745ce159)
 code, which was posted on [reddit](https://www.reddit.com/r/pokemon/comments/2ey1pw/last_night_i_wrote_a_processing_script_that/ck45c21/) a while ago.
 
-#Color Palettes
+## Color Palettes
 
 The package also includes color palettes, which were automatically generated from
 all 801 pokemon sprites. 
@@ -182,7 +176,7 @@ See the github [repo](https://github.comt/imcdlucas/palettetown) for help.
 install.packages('palettetown')
 ```
 
-# Fonts
+## Fonts
 
 The package uses an old school gameboy font for some of its themes, which
 can be download [here](https://github.com/Superpencil/pokemon-font/releases/tag/v1.8.1).
@@ -199,7 +193,7 @@ Alternatively, you can use the function `import_pokefont()`.
 import_pokefont()
 ```
 
-# Example use of data
+## Example use of data
 
 Using `theme_rocket()` to create an effectiveness table of Pokemon types.
 ```{r effectiveness,fig.width=9,fig.height=6}
@@ -227,11 +221,9 @@ ggplot(pokemon,aes(defense,attack))+
 ```
 
 
-# Addendum
+## Addendum
 
-*The package is in an early stage, so expect some ~~caterpies~~ bugs*
-
-* Logo generated with [fontmeme](https://fontmeme.com/pokemon-font/)
+* Logo created by [ZeroDawn0D](https://github.com/ZeroDawn0D)
 * Pogo Logos downloaded [here](https://dribbble.com/shots/2831980-Pok-mon-GO-Team-Logos-Vector-Download)
 * Pokémon data download from [Kaggle](https://www.kaggle.com/rounakbanik/pokemon), originally
 scraped from [serebii.net](http://serebii.net/)
