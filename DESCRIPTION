@@ -1,7 +1,9 @@
 Package: Rokemon
 Title: Pokemon Style Plotting And Data
 Version: 0.0.1
-Authors@R: person("David", "Schoch", email = "david.schoch@gess.ethz.ch", role = c("aut", "cre"))
+Authors@R: c(
+    person("David", "Schoch", email = "david@schochastics.net", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0003-2952-4812"))
 Description: This package implements several themes for ggplot to bring your data into the world of Pokemon. 
 Depends: R (>= 3.4.2)
 License: MIT + file LICENSE

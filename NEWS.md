@@ -1,5 +1,4 @@
-# Rokemon 0.0.1
+# Rokemon 0.1.0
 
-First (probably non)stable Release
 
 
